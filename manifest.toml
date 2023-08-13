@@ -1,9 +1,9 @@
 manifest_version = 1
 
 [module]
-name = "Module Name"
-id = "module_id"
-description = "Module description"
+name = "Nebulus: Customiser"
+id = "nebulus_customiser"
+description = "Customise Nebulus"
 version = "1.0.0"
-license = "Module license"
-authors = ["Your name"]
+license = "MIT"
+authors = ["ItsMeAlfie0"]
