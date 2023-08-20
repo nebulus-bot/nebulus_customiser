@@ -34,7 +34,11 @@ class NebulusCustomiser(
         self.bot.tree.interaction_check = self.interaction_check
 
     async def interaction_check(self, interaction: Interaction[ClientT], /) -> bool:
-        cog = interaction.command.extras["cog"]
+        try:
+            cog = interaction.command.extras["cog"]
+        except KeyError:
+            self.logger.warn("Command with no cog extra was executed.")
+            return True
         self.cursor.execute(
             "SELECT modules FROM enabled_modules WHERE server_id = %s",
             (interaction.guild.id,)
